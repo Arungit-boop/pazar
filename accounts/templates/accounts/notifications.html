@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}Notifications |
+{% endblock title %}
+
+{% block css %}
+.card{
+    position:relative;
+}
+.card .delete-notification{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+{% endblock css %}
+
+
+{% block body %}
+<div class="container mt-5 p-5">
+    <div class="d-flex align-items-center justify-content-center">
+        {% for notification in notifications %}
+            {% if notification.notification_type == 2 %}
+                <div class="card w-50">
+                    <div class="delete-notification">
+                        <a href="{% url 'delete-notification' notification.id %}" class="btn btn-light btn-sm"><i class="far fa-times-circle"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex flex-row align-items-center feed-text px-2"><a href="{% url 'profile-detail' notification.sender.profile.slug %}"><img class="rounded-circle" src="{{notification.sender.profile.pic.url}}" width="45"></a>
+                        <div class="d-flex flex-column flex-wrap ml-2"><span class="fw-bold">{{notification.sender.get_full_name}}</span><small><span class="text-muted">@{{notification.sender.username}}</span></small><small><span class="text-black-50 time"><i class="far fa-clock"></i> {{notification.date|naturaltime}}</span></small></div>
+                        <br><br><br>
+                        <p class="float-start"><i style="font-family:calibri;">Commented:<i> <b>{{ notification.text_preview }}</b></p>
+                        <img src="{{notification.post.pic.url}}" class="img-fluid img-responsive float-end" style="height:100px;width:100px;">
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock body %}

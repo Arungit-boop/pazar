@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+
+{% block title %}Home |
+{% endblock title %}
+
+{% block meta %}
+{% endblock meta %}
+
+{% block homeactive %}active
+{% endblock homeactive %}
+
+{% block css %}
+.card{
+    margin:4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transition:0.5s ease;
+}
+
+.card img{
+  max-height:200px;
+}
+
+.carousel-item img{
+  height:500px;
+}
+
+.card:hover{
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+{% endblock css %}
+
+{% block body %}
+<div class="container-fluid p-0">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://source.unsplash.com/1200x600/?car" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1200x600/?car" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1200x600/?car" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+</div>
+
+<h2 class="text-center text-uppercase font-weight-bold text-primary mt-2 mb-2">What Are You Looking For?</h2>
+
+<div class="container">
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+             <img src="https://source.unsplash.com/1200x600/?car" class="d-block w-100" alt="">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">Automobiles</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/automobiles"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?B2B" class="d-block w-100" alt="...">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">B2B</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/B2B"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?Business" class="d-block w-100" alt="...">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">Business Services</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Business_Services"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?fruits" class="d-block w-100" alt="...">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">Daily Needs</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Dialy_Needs"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?Services" class="d-block w-100" alt="...">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">Demand & Get Services</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="#"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?Doctors" class="d-block w-100" alt="...">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">Doctors</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Doctors"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?ambulance" class="d-block w-100" alt="...">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">Emergency Services</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Emergency_Services"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?wedding" class="d-block w-100" alt="...">
+            <div class="card-body">
+            <h3 class="card-title font-weight-bold">Event Organisers</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Event_Organisers"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?Insurance" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">Insurance</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Insurance"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?Loans" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">Loans</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Loan"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?beauty" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">Personal Care</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Personal_Care"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?Repairs" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">Repairs</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Repairs"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?restaurants" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">Restaurants</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Restaurant_Services"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?Travel" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">Travel</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                   <a href="/Travel"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-4">
+          <div class="card mb-4 shadow-lg p-3">
+            <img src="https://source.unsplash.com/1200x600/?nature,sun" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title font-weight-bold">Explore More...</h3>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/categories"><button type="button" class="btn btn-sm btn-primary mt-2">View</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

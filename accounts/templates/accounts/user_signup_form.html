@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup as User | Pazar-Aapke Sapno Ka Bazaar</title>
+	<link rel="stylesheet" type="text/css" href="/static/CSS/user_signup_style.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+
+	<!-- For Favicon -->
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'Pazar Favicon.ico' %}" type="image/x-icon">
+
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/6170a67588.js" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+		::-webkit-scrollbar-track{
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+			background-color: #F5F5F5;
+		}
+
+		::-webkit-scrollbar{
+			width: 6px;
+			background-color: #F5F5F5;
+		}
+
+		::-webkit-scrollbar-thumb{
+			background-color: #C0C0C0;
+		}
+
+		#messages{
+			color: #FF0000;
+			font-family:monospace;
+			font-size:18px;
+			list-style-type:none;
+		}
+
+		.errorlist{
+			list-style-type:none;
+			margin-bottom:0;
+			padding-left:0;
+		}
+		form{
+			width:450px;
+		}
+		.form-group{
+			margin:25px 0;
+		}
+		.card{
+			border:0;
+		}
+		h2{
+			font-size:2.5rem;
+		}
+		#loader{
+			margin:0;
+			padding:0;
+			position:fixed;
+			z-index:99999;
+			height:100vh;
+			width:100%;
+			background:#fff url('/static/loader.gif') no-repeat center; 
+		}
+    </style>
+</head>
+<body onload="myFunction()"> 
+		<div id="loader">
+		</div>
+{% load crispy_forms_tags %}
+	<div class="card">
+	<div class="card-body">
+		<img src="/static/Img/avatar.svg" class="img-fluid" style="margin-left:150px;" height="100px" width="100px">
+      	<h2 style="margin-left:50px;display:flex;flex-wrap:wrap;">Sign up as a {{ user_type }}</h2>
+      	<form method="POST" class="needs-validation" novalidate>
+			{% csrf_token %}
+        	<input type="hidden" name="next" value="{{ next }}">
+        	{{ form|crispy }}
+			<div class="form-group">
+				<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+				<label class="form-check-label" for="invalidCheck">Agree to terms and conditions</label>
+				<div class="invalid-feedback">You must agree before submitting.</div>
+				</div>
+            </div>
+        <button type="submit" class="btn btn-primary">Sign up</button>
+     	</form>
+    </div>
+	</div>
+	<script>
+		var preloader = document.getElementById('loader');
+		function myFunction(){
+			preloader.style.display='none';
+		}
+	</script>
+    <script>
+    const inputs = document.querySelectorAll(".input");
+function addcl(){
+	let parent = this.parentNode.parentNode;
+	parent.classList.add("focus");
+}
+
+function remcl(){
+	let parent = this.parentNode.parentNode;
+	if(this.value == ""){
+		parent.classList.remove("focus");
+	}
+}
+inputs.forEach(input => {
+	input.addEventListener("focus", addcl);
+	input.addEventListener("blur", remcl);
+});
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+    </script>
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	<!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</body>
+</html>

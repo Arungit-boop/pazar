@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}All Categories |
+{% endblock title %}
+
+{% block categoryactive %}active
+{% endblock categoryactive %}
+
+{% block css %}
+.category-head{
+    height:500px;
+    width:100%;
+}
+{% endblock css %}
+
+{% block body %}
+{% comment %} <div class="container-fluid py-2 mt-5">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card-group">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card-group">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card-group">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://source.unsplash.com/1600x900/?nature,water" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div> {% endcomment %}
+<img src="https://source.unsplash.com/1200x600/?category" class="img-fluid category-head" alt="Category">
+<h2 class="text-center text-uppercase font-weight-bold text-primary mt-2">All Categories</h2>
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-2 mb-3">
+            <nav class="navbar navbar-expand-lg navbar-light" style="padding:0;">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-action active bg-info border-0"><a style="text-decoration:none;color:white;font-family: 'Baloo Tamma 2', cursive;" href="/categories"><img src="{% static 'All Category Icon.png' %}" alt="Category Icon" style="display:inline-block;" class="img-fluid mr-3">All Category</a></li>
+                        {% for category in category %}
+                        <li class="list-group-item list-group-item-action"><a style="text-decoration:none; color:black;font-family: 'Baloo Tamma 2', cursive;" href="category/{{category.id}}/{{category.slug}}">{% if category.icon %}<img class="img-fluid mr-3" src="{{category.icon.url}}" style="height:25px;width:25px;object-fit:scale-down;display:inline-block;" alt="{{category.name}}">{% endif %}{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-md-10">
+            <div class="row product-row mx-auto mb-2">
+                    {% for category in category %}
+                    <div id="{{ category.id }}" class="col-md-4 mb-4">
+                        <div class="card product-card mb-2">
+                        {% if category.image %}
+                            <img class="card-img-top" src="{{ category.image.url }}" alt="{{category.name}}">
+                        {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title h5" style="font-family: 'Baloo Tamma 2', cursive;">{{category.name}}</h5>
+                                <p class="card-text" style="font-family: 'Roboto', sans-serif;">{{category.description}}</p>
+                                {{category.get_html_badge}}
+                                <a href="{% url 'category-detail' category.id category.slug %}"><button type="button" class="btn btn-info" style="float:right;"><i class="fas fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Demand & Get Services |
+{% endblock title %}
+
+{% block body %}
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-2 mb-3">
+            {% include 'category base.html' %}
+        </div>
+                <div class="col-md-10">
+            <div class="row product-row mx-auto mb-2">
+                    {% for subcategory in subcategory %}
+                    <div id="{{ subcategory.id }}" class="col-md-4 mb-4">
+                        <div class="card product-card mb-2">
+                        {% if subcategory.image %}
+                            <img class="card-img-top" src="{{ subcategory.image.url }}" alt="{{subcategory.name}}">
+                        {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title h5" style="font-family: 'Baloo Tamma 2', cursive;">{{subcategory.name}}</h5>
+                                <p class="card-text" style="font-family: 'Roboto', sans-serif;">{{subcategory.description}}</p>
+                                <a href="#"><button type="button" class="btn btn-info"><i class="fas fa-arrow-right"></i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

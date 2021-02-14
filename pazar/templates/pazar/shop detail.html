@@ -1,0 +1,89 @@
+{% extends 'dashboard base.html' %}
+
+{% block title %}{{listing.Business_Name}} |
+{% endblock title %}
+
+{% block shopsactive %}active
+{% endblock shopsactive %}
+
+{% block breadcrumb %}
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+    <li class="breadcrumb-item"><a href="/Dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="/shops">Shops</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{listing.Business_Name}}</li>
+  </ol>
+</nav>
+{% endblock breadcrumb %}
+
+{% block css %}
+.card-img-overlay{
+    width:0;
+}
+{% endblock css %}
+
+{% block body %}
+<div class="d-sm-flex align-items-center justify-content-evenly mb-4 mt-4">
+    <h2 class="h3 mb-0 text-gray-800" style="margin-left:40px;">{{listing.Business_Name}}</h2>
+</div>
+<div class="container mt-2">
+    <div class="card bg-transparent">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{listing.Business_Logo.url}}" alt="{{listing.Business_Name}}" style="height:300px;width:350px;" class="p-1">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight:bold;">{{listing.Business_Name}}</h5>
+                    <p class="card-text">{{listing.Business_Description}}</p>
+                    <p class="card-text"><strong>Category:</strong> {{listing.Business_Category}}</p>
+                    <p class="card-text"><strong>Services:</strong> {% for i in listing.Business_Subcategory.all %} {{i.name}}{% if not forloop.last %},{% endif %}{% endfor %}</p>
+                    <p class="card-text"><strong>Phone:</strong> {{listing.Business_Telephone}}</p>
+                    <p class="card-text"><strong>Address:</strong> {{listing.Business_Address}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-sm-flex align-items-center justify-content-evenly mb-4 mt-4">
+    <h2 class="h3 mb-0 text-gray-800" style="margin-left:40px;">Customers <a class="btn btn-dark btn-sm mx-1" href="{% url 'customer-add' %}"><i class="fas fa-plus-circle"></i></a></h2>
+</div>
+<div class="container mt-2">
+    <div class="col-md-12 col-sm-12">
+        <div class="table-responsive-md table-responsive-sm table-responsive-lg">
+            <table class="table table-striped table-hover shadow-sm">
+                <caption>List of customers</caption>
+                <thead class="bg-dark text-light">
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Shop</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for customer in customer %}
+                    <tr>
+                        <th scope="row">{{forloop.counter}}</th>
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.shop.Business_Name}}</td>
+                        <td>{{customer.address}}</td>
+                        <td>{{customer.phone}}</td>
+                        <td class="d-inline-flex">
+                            <a class="btn-sm btn-warning mx-1" href="#"><i class="far fa-eye"></i></a>
+                            <a class="btn-sm btn-success mx-1" href="{% url 'edit-customer' customer.id customer.slug %}"><i class="fas fa-edit"></i></a>
+                            <a class="btn-sm btn-danger mx-1" href="{% url 'delete-customer' customer.id customer.slug %}"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                        <h5>You haven't added any customer yet. Please add one first.</h5>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock body %}
